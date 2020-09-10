@@ -10,15 +10,32 @@ const getURL = function (city) {
 router.get('/city/:cityName', async (req, res) => {
     const cityName = req.params.cityName
     const response = await axios.get(getURL(cityName));
-    const newCity = new City({
+    const cityData = {
         name: response.data.name,
         temperature: response.data.main.temp,
         condition: response.data.weather[0].description,
         conditionPic: response.data.weather[0].icon
-    })
-    const newCreatedCity = await newCity.save()
-    res.send(newCreatedCity)
+    }
+    res.send(cityData)
 })
 
+router.get('/cities', async (req, res) => {
+    const allCities = await City.find({})
+    res.send(allCities)
+})
+
+router.post('/city', (req, res) => {
+    const city = {...req.body}
+    const newCity = new City(city)
+    newCity.save()
+    res.send(`${newCity.name} has been saved to the DB`)
+
+})
+
+router.delete('/city/:cityName',async (req, res) =>{
+    const cityName = req.params.cityName
+    const deletedCity = await City.findOneAndDelete({name:cityName})
+    res.send(`${deletedCity.name} was deleted from DB`)
+} )
 
 module.exports = router
