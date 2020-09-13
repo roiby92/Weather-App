@@ -6,7 +6,9 @@ const citySchema = new Schema({
     name:String,
     temperature:Number,
     condition:String,
-    conditionPic:String
+    conditionPic:String,
+    lat:Number,
+    lon:Number
 })
 
 const City = mongoose.model('City',citySchema)
