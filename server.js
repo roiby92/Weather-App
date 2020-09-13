@@ -15,6 +15,6 @@ app.use('/',api)
 
 
 const PORT = 3100
-app.listen(PORT,()=>{
+app.listen(process.env.PORT || PORT ,()=>{
     console.log(`Server is running on port ${PORT}`);
 })

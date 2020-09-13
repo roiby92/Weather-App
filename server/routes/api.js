@@ -4,9 +4,8 @@ const City = require('./../model/city')
 const axios = require('axios')
 
 const getURL = function (city) {
-    return `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b480793f85b72213c6dc2bf55559e01e`
+    return `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=b480793f85b72213c6dc2bf55559e01e`
 }
-
 router.get('/city/:cityName', async (req, res) => {
     const cityName = req.params.cityName
     const response = await axios.get(getURL(cityName));
