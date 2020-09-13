@@ -39,7 +39,7 @@ body {
 
 .city {
     display: grid;
-    grid-template-columns: 1fr 2fr 4fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 3fr 2fr 1fr 1fr;
     justify-items: center;
     align-items: center;
     background-color: #7FDBFF;
@@ -51,4 +51,13 @@ img {
     width: 100px;
     height: 100px;
     background-color: transparent;
+}
+.add{
+    cursor: pointer;
+}
+.delete{
+    cursor: pointer;
+}
+.fa-retweet{
+    cursor: pointer;
 }
