@@ -1,6 +1,6 @@
 class Model {
     constructor() {
-        this.cityData = []
+        this.cityData = [ ]
     }
 
     getDataFromDB = async () => {

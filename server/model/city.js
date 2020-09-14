@@ -8,7 +8,8 @@ const citySchema = new Schema({
     condition:String,
     conditionPic:String,
     lat:Number,
-    lon:Number
+    lon:Number,
+    updatedAt:Date
 })
 
 const City = mongoose.model('City',citySchema)

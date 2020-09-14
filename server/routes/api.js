@@ -25,7 +25,8 @@ router.get('/city', async (req, res) => {
             condition: response.data.weather[0].description,
             conditionPic: response.data.weather[0].icon,
             lat: response.data.coord.lat,
-            lon: response.data.coord.lon
+            lon: response.data.coord.lon,
+            updatedAt: moment(response.data.dt).toDate()
         }
         res.send(cityData)
 })
@@ -57,6 +58,7 @@ router.put('/city/:cityName', async (req, res) => {
             temperature: response.data.main.temp,
             condition: response.data.weather[0].description,
             conditionPic: response.data.weather[0].icon,
+            updatedAt: moment()
         }
     }, { new: true })
     res.send(cityUpdate)
