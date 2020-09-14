@@ -1,0 +1,63 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color:#0074D9;
+    margin: 0;
+}
+
+#container {
+    display: grid;
+    grid-template-areas: "input button" "content content";
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 5px;
+    margin: 15px;
+}
+
+#city-input {
+    grid-area: input;
+    background-color: #7FDBFF;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    outline: none;
+}
+
+#city-butn {
+    grid-area: button;
+    background-color: #7FDBFF;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+#results {
+    grid-area: content;
+}
+
+.city {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 2fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: #7FDBFF;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+}
+.add{
+    cursor: pointer;
+}
+.delete{
+    cursor: pointer;
+}
+.fa-retweet{
+    cursor: pointer;
+}
